@@ -6,9 +6,9 @@ var confirmUpper;
 var confirmLower;
 var confirmLength;
 
-//var values 
 //This is where the password will be stored as it is created
-var password = '';
+var password ="";
+//var values
 //lowerCase string
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 //upperCase string
@@ -20,19 +20,18 @@ var symbol = '!@#$%^&*()<~?:+';
 //This is where th input will be stored I think...
 var length ="";
 
-//Start function
+
 //button function to start promts 
 var generateBtn = document.querySelector("#generate").addEventListener('click', generate);
 //generates the password
 function generate(){
-  console.log('string')
   userprompt();
- //generatePassword();
+  generatePassword();
 } 
 
 
 //Generator functions
-function userprompt() {
+var userprompt = function() {
   //ask for input
   var confirmLength = parseInt(prompt("How many characters would you like your password to be? Enter a number between 8-128"));
   //if statement to insure proper length  
@@ -41,38 +40,42 @@ function userprompt() {
     return userprompt();
   }
   else if (confirmLength <8 || confirmLength >128) {
-    window.alert ("Number must be btweern 8-128");
+    window.alert ("Number must be betweern 8-128");
     return userprompt();
   }
   else {
     //continue through promts after valid answer
-  ConfimLower = window.confirm("Would you like lowercase letters in your password? 'OK' for yes, 'Cancel for no");
+  confirmLower = window.confirm("Would you like lowercase letters in your password? 'OK' for yes, 'Cancel for no");
   confirmUpper = window.confirm("Would you like uppercase letters in your password? 'OK' for yes, 'Cancel for no");
   confirmNum = window.confirm("Would you like numbers in your password? 'Ok' for yes, 'Cancel' for no");
   confirmChar = window.confirm("Would you like special characters in your password? 'OK' for yes, 'Cancel for no.");
   };
 }
-/*
-function generatePassword() {
+
+//Takes input from userPrompt to create a password
+var generatePassword = function() {
   if (userPrompt.confirmLower) {
     lowerCase.charAt(Math.floor(Math.random() * lowerCase.length))
+    console.log(lowerCase.charAt(Math.floor(Math.random() * lowerCase.length)))
   }
+ //else (!userprompt.confirmLower)
+  
   //if userprompt.lowerCase
-console.log(lowerCase);
-  console.log(Math.floor(Math.random() * lowerCase.length));
- console.log(lowerCase.charAt(Math.floor(Math.random() * lowerCase.length)))
+//console.log(lowerCase);
+  //console.log(Math.floor(Math.random() * lowerCase.length));
+ //console.log(lowerCase.charAt(Math.floor(Math.random() * lowerCase.length)))
 
 }
 
 
 // Write password to the #password input
- function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+ //function writePassword() {
+  //var password = generatePassword();
+  //var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  //passwordText.value = password;
 
-}
+//}
 
 // Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword); */
+//generateBtn.addEventListener("click", writePassword); 
