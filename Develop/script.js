@@ -1,37 +1,36 @@
 // Assignment code here
+var lowerCase = 'abcdefghijklmnopqrstuvwxyz'
+var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+var symbol = '!@#$%^&*()<~?:+'
+var length
 
 //button function
 var generateBtn = document.querySelector("#generate").addEventListener('click', generate);
 function generate(){
-  var enter = parseInt(prompt("How many characters would you like your password to be? Enter a number between 8-128"));
+  console.log('string')
+  userprompt();
+  generatePassword();
+} 
+
+function userprompt() {
+  length = parseInt(prompt("How many characters would you like your password to be? Enter a number between 8-128"));
+  lowerCase = window.confirm("Would you like lowercase letters in your password? 'OK' for yes, 'Cancel for no");
+  upperCase = window.confirm("Would you like uppercase letters in your password? 'OK' for yes, 'Cancel for no");
+  symbol = window.confirm("Would you like special characters in your password? 'OK' for yes, 'Cancel for no.")
 }
+
+function generatePassword() {
+ console.log(Math.floor(Math.random() * lowerCase.length));
+ console.log(lowerCase.split("")[Math.floor(Math.random() * lowerCase.length)])
+}
+
 //Start function
-//function generatePassword() {
-  //Get user input
- // enter = parseInt(prompt("How many characters would you like your password to be? Enter a number between 8-128"));
-//}
 
 
 
-//We use this later according to the video
 //Generator functions
-function getRandomLower(){
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-function getRandomUpper(){
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-function getRandomNumber(){
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-function getRandomSymbol(){
-  return String.fromCharCode(Math.floor(Math.random() * 14) + 33);
-}
 
 
-
-// Get references to the #generate element
-//var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 // function writePassword() {
