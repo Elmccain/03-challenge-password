@@ -4,6 +4,7 @@ var confirmNum;
 var confirmChar;
 var confirmUpper;
 var confirmLower;
+var confirmLength;
 
 //var values 
 //This is where the password will be stored as it is created
@@ -26,22 +27,32 @@ var generateBtn = document.querySelector("#generate").addEventListener('click', 
 function generate(){
   console.log('string')
   userprompt();
-  generatePassword();
+ //generatePassword();
 } 
 
 
 //Generator functions
 function userprompt() {
-  length = parseInt(prompt("How many characters would you like your password to be? Enter a number between 8-128"));
-   // if (condition) {
-      
-    //}
+  //ask for input
+  var confirmLength = parseInt(prompt("How many characters would you like your password to be? Enter a number between 8-128"));
+  //if statement to insure proper length  
+  if (!confirmLength) { 
+    window.alert("Enter a number between 8-128"); 
+    return userprompt();
+  }
+  else if (confirmLength <8 || confirmLength >128) {
+    window.alert ("Number must be btweern 8-128");
+    return userprompt();
+  }
+  else {
+    //continue through promts after valid answer
   ConfimLower = window.confirm("Would you like lowercase letters in your password? 'OK' for yes, 'Cancel for no");
   confirmUpper = window.confirm("Would you like uppercase letters in your password? 'OK' for yes, 'Cancel for no");
   confirmNum = window.confirm("Would you like numbers in your password? 'Ok' for yes, 'Cancel' for no");
   confirmChar = window.confirm("Would you like special characters in your password? 'OK' for yes, 'Cancel for no.");
+  };
 }
-
+/*
 function generatePassword() {
   if (userPrompt.confirmLower) {
     lowerCase.charAt(Math.floor(Math.random() * lowerCase.length))
@@ -64,4 +75,4 @@ console.log(lowerCase);
 }
 
 // Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword); 
+//generateBtn.addEventListener("click", writePassword); */
