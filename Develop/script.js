@@ -8,20 +8,6 @@ var confirmLength;
 
 //This is where the password will be stored as it is created
 var password = "";
-//var values
-//lowerCase string
-function randomLow() {
-  var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
-  console.log(Math.floor(Math.random() * lowerCase.length));  
-};
-
-//upperCase string
-var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-// number string 
-var number = '0123456789';
-//symbol string
-var symbol = '!@#$%^&*()<~?:+';
-//This is where th input will be stored I think...
 var length = "";
 
 //Generator functions
@@ -45,9 +31,27 @@ var generatePassword = function () {
     confirmChar = window.confirm("Would you like special characters in your password? 'OK' for yes, 'Cancel for no.");
   };
 }
-
+function getLower() {
+  var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+  return (lowerCase.charAt(Math.floor(Math.random() * lowerCase.length)));
+}
+function getUpper() {
+  var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  return (upperCase.charAt(Math.floor(Math.random() * upperCase.length)));
+}
+function getNumber() {
+  var number = '0123456789';
+  return (number.charAt(Math.floor(Math.random() * number.length)));
+}
+function getSymbol() {
+  var symbol = '!@#$%^&*()<~?:+';
+  return (symbol.charAt(Math.floor(Math.random() * symbol.length)));
+}
+console.log(getLower());
+console.log(getUpper());
+console.log(getNumber());
+console.log(getSymbol());
 
 generatePassword();
-randomLow();
 //button function to start promts 
 var generateBtn = document.querySelector("#generate").addEventListener('click', generate);
