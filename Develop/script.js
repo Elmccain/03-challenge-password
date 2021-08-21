@@ -12,10 +12,11 @@ var confirmLower;
 var confirmLength;
 //holders for password and password length
 var password = "";
+//container for the array(?) that will hold choices
 var pwLength = "";
 
 //Generator functions -- Office hours helped me cut out all of the if statements I was planning to write
-var generatePassword = function () {
+ var generatePassword = function () {
 password = "";
 pwLength = "";
 var confirmLength = parseInt(prompt("How many characters would you like your password to be? Enter a number between 8-128"));
@@ -28,7 +29,7 @@ var confirmLength = parseInt(prompt("How many characters would you like your pas
     window.alert("Number must be betweern 8-128");
     return generatePassword();
   }
-  else{
+  else 
  //continue through promts after valid answer
  confirmLower = window.confirm("Would you like lowercase letters in your password? 'OK' for yes, 'Cancel for no");
  if (confirmLower) {
@@ -52,47 +53,17 @@ if (!confirmChar && !confirmLower && !confirmNum && !confirmUpper) {
   return generatePassword();
 }
 console.log(pwLength);
+for (let i = 0; i < confirmLength; i++) {
+  var password = password + pwLength.charAt(Math.floor(Math.random() * symbol.length))
+  console.log(password);
 }
-}
-//selection of variables
-for (let i = 0; i < pwLength.length; i++) {
-  password = password + pwLength.charAt(Math.floor(Math.random() * symbol.length))
-  const element = password[i];
-
-}
-
-//Get random characters 
-// function getLower() {
-//   return (lowerCase.charAt(Math.floor(Math.random() * lowerCase.length)));
-// }
-// function getUpper() {
-//   return (upperCase.charAt(Math.floor(Math.random() * upperCase.length)));
-// }
-// function getNumber() {
-//   return (number.charAt(Math.floor(Math.random() * number.length)));
-// }
-// function getSymbol() {
-//   return (symbol.charAt(Math.floor(Math.random() * symbol.length)));
-// }
-//  console.log(getLower());
-//  console.log(getUpper());
-//  console.log(getNumber());
-//  console.log(getSymbol());
-
-// function passwordParts() {
-
+};
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-}
-
-//selection of variables
-for (let i = 0; i < pwLength.length; i++) {
-  password = password + pwLength.charAt(Math.floor(Math.random() * symbol.length))
-  const element = password[i];
-
+  //var password = generatePassword();
+ //var passwordText = document.querySelector("#password");
+  //selection of variables - loop
 }
 
 generatePassword();
