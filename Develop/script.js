@@ -10,7 +10,11 @@ var confirmLength;
 var password = "";
 //var values
 //lowerCase string
-var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+function randomLow() {
+  var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+  console.log(Math.floor(Math.random() * lowerCase.length));  
+};
+
 //upperCase string
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 // number string 
@@ -42,8 +46,8 @@ var generatePassword = function () {
   };
 }
 
-function generate() {
+
 generatePassword();
-}
+randomLow();
 //button function to start promts 
 var generateBtn = document.querySelector("#generate").addEventListener('click', generate);
