@@ -57,15 +57,9 @@ for (let i = 0; i < confirmLength; i++) {
   var password = password + pwLength.charAt(Math.floor(Math.random() * pwLength.length))
   console.log(password);
 }
- passwordText = document.querySelector("#password");
+//Display the result
+document.getElementById("password").innerHTML = password;
 };
-
-// Write password to the #password input
-function writePassword() {
-  //var password = generatePassword();
- //var passwordText = document.querySelector("#password");
-
-}
 
 generatePassword();
 //Button yo start propmts and write password
