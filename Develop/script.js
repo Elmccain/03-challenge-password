@@ -7,11 +7,16 @@ var confirmLower;
 var confirmLength;
 
 //IDK WHY I PUT THIS HERE. RETURN HERE BEFORE SUBMIT
-var length = "";
+var pwLength = "";
 
 
 //Generator functions
 var generatePassword = function () {
+
+
+}
+
+
 //Get random characters 
 function getLower() {
   var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
@@ -33,11 +38,6 @@ console.log(getLower());
 console.log(getUpper());
 console.log(getNumber());
 console.log(getSymbol());
-}
-
-//this holds the password 
-var password = "";
-
 
 // Write password to the #password input
 function writePassword() {
@@ -55,34 +55,45 @@ function writePassword() {
       return generatePassword();
     }
     else {
+      var pwLength = document.getElementById("confirmLength").value;
+      console.log(pwLength);
       //continue through promts after valid answer
-      confirmLower = window.confirm("Would you like lowercase letters in your password? 'OK' for yes, 'Cancel for no");
-      confirmUpper = window.confirm("Would you like uppercase letters in your password? 'OK' for yes, 'Cancel for no");
-      confirmNum = window.confirm("Would you like numbers in your password? 'Ok' for yes, 'Cancel' for no");
-      confirmChar = window.confirm("Would you like special characters in your password? 'OK' for yes, 'Cancel for no.");
+      //confirmLower = window.confirm("Would you like lowercase letters in your password? 'OK' for yes, 'Cancel for no");
+      //confirmUpper = window.confirm("Would you like uppercase letters in your password? 'OK' for yes, 'Cancel for no");
+      //confirmNum = window.confirm("Would you like numbers in your password? 'Ok' for yes, 'Cancel' for no");
+      //confirmChar = window.confirm("Would you like special characters in your password? 'OK' for yes, 'Cancel for no.");
     };
     //if all options are cancel circle back
-    if (!confirmChar && !confirmLower && !confirmNum && !confirmNum && !confirmUpper){
+    if (!confirmChar && !confirmLower && !confirmNum && !confirmUpper){
       alert("Give me something to work with!");
     }
-    //else for all 5 choices
-   // else if (confirmChar && confirmLower && confirmNum && confirmNum && confirmUpper){
+    //else for all 4 choices
+   // else if (confirmChar && confirmLower && confirmNum && confirmUpper){
      // console.log(before + "password");
       //password = password.concat(getUpper)
   
     //}
   
-    //else for 4 options
-  
     //else for 3 options
-  
   
     //else for 2 options
   
+  
+    //else for 1 options
+  
     //else for 1 option
+    if (confirmNum) {
+      //console.log(getNumber());
+      password.push(getNumber());
+      console.log(password);
+      
+    }
 
+    //this holds the password 
+var password = "";
   passwordText.value = password;
 }
+
 
 generatePassword();
 //Button yo start propmts and write password
