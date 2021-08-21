@@ -26,7 +26,7 @@ var generateBtn = document.querySelector("#generate").addEventListener('click', 
 //generates the password
 function generate(){
   userprompt();
-  generatePassword();
+  //generatePassword();
 } 
 
 
@@ -52,30 +52,28 @@ var userprompt = function() {
   };
 }
 
-//Takes input from userPrompt to create a password
-var generatePassword = function() {
-  if (userPrompt.confirmLower) {
-    lowerCase.charAt(Math.floor(Math.random() * lowerCase.length))
-    console.log(lowerCase.charAt(Math.floor(Math.random() * lowerCase.length)))
-  }
- //else (!userprompt.confirmLower)
-  
-  //if userprompt.lowerCase
-//console.log(lowerCase);
-  //console.log(Math.floor(Math.random() * lowerCase.length));
- //console.log(lowerCase.charAt(Math.floor(Math.random() * lowerCase.length)))
+
+
+// Write password to the #password input
+ function writePassword() {
+   if (confirmNum) {
+     console.log(writePassword)
+     password.push(number)
+   } else {
+     
+   }
+   if (condition) {
+     
+   } else {
+     
+   }
+ var password = generatePassword();
+ var passwordText = document.querySelector("#password");
+
+ passwordText.value = password;
 
 }
 
 
-// Write password to the #password input
- //function writePassword() {
-  //var password = generatePassword();
-  //var passwordText = document.querySelector("#password");
-
-  //passwordText.value = password;
-
-//}
-
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword); 
+//button function to start promts 
+var generateBtn = document.querySelector("#generate").addEventListener('click', generate);
