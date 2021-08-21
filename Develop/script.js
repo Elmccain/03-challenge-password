@@ -1,20 +1,8 @@
-// Assignment code
 //variables
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var number = '0123456789';
 var symbol = '!@#$%^&*()<~?:+';
-//store answers
-var confirmNum;
-var confirmChar;
-var confirmUpper;
-var confirmLower;
-var confirmLength;
-//holders for password and password length
-var password = "";
-//container for the array(?) that will hold choices
-var pwLength = "";
-
 //Generator functions -- Office hours helped me cut out all of the if statements I was planning to write
  var generatePassword = function () {
 password = "";
@@ -64,4 +52,4 @@ document.getElementById("password").innerHTML = password;
 generatePassword();
 //Button yo start propmts and write password
 var generateBtn = document.querySelector("#generate");
-generateBtn = document.querySelector("#generate").addEventListener("click", writePassword);
+generateBtn = document.querySelector("#generate").addEventListener("click", generatePassword);
