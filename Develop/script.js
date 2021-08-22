@@ -48,7 +48,5 @@ var generatePassword = function () {
   document.getElementById("password").innerHTML = password;
 };
 
-generatePassword();
 //Button yo start propmts and write password
-var generateBtn = document.querySelector("#generate");
-generateBtn = document.querySelector("#generate").addEventListener("click", generatePassword);
+ generateBtn = document.querySelector("#generate").addEventListener("click", generatePassword);
